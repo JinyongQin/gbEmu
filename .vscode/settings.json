@@ -1,0 +1,61 @@
+{
+    // 设置文件的编码格式为 UTF-8
+    "files.encoding": "utf8",
+    // 设置默认的行尾符为 LF
+    "files.eol": "\n",
+    // 启用格式化保存
+    "editor.formatOnSave": true,
+    // 设置 Tab 的宽度为 4 个空格
+    "editor.tabSize": 4,
+    // 使用空格代替 Tab
+    "editor.insertSpaces": true,
+    // 启用代码自动补全
+    "editor.quickSuggestions": {
+        "other": true,
+        "comments": false,
+        "strings": true
+    },
+    // 设置调试控制台的编码为 UTF-8
+    "terminal.integrated.defaultProfile.linux": "bash",
+    "terminal.integrated.env.linux": {
+        "LANG": "en_US.UTF-8"
+    },
+    // 针对游戏开发的特定设置
+    "files.associations": {
+        "*.gb": "binary",
+        "*.asm": "asm",
+        "random": "cpp",
+        "emu.h": "c"
+    },
+    // 配置 C/C++ 插件的路径（如果需要）
+    "C_Cpp.default.includePath": [
+        "${workspaceFolder}/include",
+        "/usr/include",
+        "/usr/local/include"
+    ],
+    // 配置调试器路径（如果需要）
+    "launch": {
+        "configurations": [
+            {
+                "name": "Debug Gameboy Emulator",
+                "type": "cppdbg",
+                "request": "launch",
+                "program": "${workspaceFolder}/build/emulator",
+                "args": [],
+                "stopAtEntry": false,
+                "cwd": "${workspaceFolder}",
+                "environment": [],
+                "externalConsole": false,
+                "MIMode": "gdb",
+                "miDebuggerPath": "/usr/bin/gdb",
+                "setupCommands": [
+                    {
+                        "description": "Enable pretty-printing for gdb",
+                        "text": "-enable-pretty-printing",
+                        "ignoreFailures": true
+                    }
+                ]
+            }
+        ]
+    }
+}
